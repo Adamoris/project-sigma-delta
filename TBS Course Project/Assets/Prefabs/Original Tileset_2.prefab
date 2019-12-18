@@ -97,12 +97,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 0}
+  terrainType: 0
+  randomGeneration: 1
   tileGraphics:
   - {fileID: -2317011325907329370, guid: 190ba8819af1a4f2781fc13a1041bfbf, type: 3}
   - {fileID: -6073340433296135209, guid: 190ba8819af1a4f2781fc13a1041bfbf, type: 3}
   - {fileID: 4714548999874952535, guid: 190ba8819af1a4f2781fc13a1041bfbf, type: 3}
   - {fileID: -238351862037747208, guid: 190ba8819af1a4f2781fc13a1041bfbf, type: 3}
   - {fileID: -4189088336402650746, guid: 190ba8819af1a4f2781fc13a1041bfbf, type: 3}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  highlightedColor: {r: 0.22027414, g: 0.5947243, b: 0.8490566, a: 1}
+  isTraversable: 0
 --- !u!61 &-8774623263838248751
 BoxCollider2D:
   m_ObjectHideFlags: 0
