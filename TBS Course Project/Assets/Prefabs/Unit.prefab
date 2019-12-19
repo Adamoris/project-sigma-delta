@@ -215,3 +215,7 @@ MonoBehaviour:
   health: 1
   attack: 0
   defense: 0
+  damageIndicator: {fileID: -1993807619064292083, guid: 403d60320220e4095b2ae83a19f9c43e,
+    type: 3}
+  deathEffect: {fileID: 3485084768234900520, guid: 81780fc7ea485484eb4a42822d826baf,
+    type: 3}

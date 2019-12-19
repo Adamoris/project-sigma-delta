@@ -27,9 +27,15 @@ public class Unit : MonoBehaviour
     public int attack;
     public int defense;
 
+    public DamageIndicator damageIndicator;
+    public GameObject deathEffect;
+
+    private Animator camAnim;
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
+        camAnim = Camera.main.GetComponent<Animator>();
     }
 
     private void OnMouseDown()
@@ -74,6 +80,8 @@ public class Unit : MonoBehaviour
 
     void Attack(Unit target)
     {
+        camAnim.SetTrigger("shake");
+
         hasAttacked = true;
 
         int damageDealt = attack - target.defense;
@@ -81,20 +89,26 @@ public class Unit : MonoBehaviour
 
         if (damageDealt >= 1)
         {
+            DamageIndicator instance = Instantiate(damageIndicator, target.transform.position, Quaternion.identity);
+            instance.Setup(damageDealt);
             target.health -= damageDealt;
         }
         if (damageReceived >= 1)
         {
+            DamageIndicator instance = Instantiate(damageIndicator, transform.position, Quaternion.identity);
+            instance.Setup(damageReceived);
             health -= damageReceived;
         }
 
         if (target.health <= 0)
         {
+            Instantiate(deathEffect, target.transform.position, Quaternion.identity);
             Destroy(target.gameObject);
             GetWalkableTiles();
         }
         if (health <= 0)
         {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             gm.ResetTiles();
             Destroy(gameObject);
         }
