@@ -15,6 +15,18 @@ public class Unit : MonoBehaviour
 
     public float moveSpeed;
 
+    public int playerNumber;
+
+    public int attackRange;
+    List<Unit> enemiesInRange = new List<Unit>();
+    public bool hasAttacked;
+
+    public GameObject weaponIcon;
+
+    public int health;
+    public int attack;
+    public int defense;
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
@@ -22,6 +34,8 @@ public class Unit : MonoBehaviour
 
     private void OnMouseDown()
     {
+        ResetWeaponIcons();
+
         if (selected == true)
         {
             selected = false;
@@ -30,16 +44,59 @@ public class Unit : MonoBehaviour
         }
         else
         {
-            if (gm.selectedUnit != null)
+            if (playerNumber == gm.playerTurn)
             {
-                gm.selectedUnit.selected = false;
+                if (gm.selectedUnit != null)
+                {
+                    gm.selectedUnit.selected = false;
+                }
+
+                selected = true;
+                gm.selectedUnit = this;
+
+                gm.ResetTiles();
+                GetEnemies();
+                GetWalkableTiles();
             }
+        }
 
-            selected = true;
-            gm.selectedUnit = this;
+        Collider2D col = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.15f);
+        Unit unit = col.GetComponent<Unit>();
+        if (gm.selectedUnit != null)
+        {
+            if (gm.selectedUnit.enemiesInRange.Contains(unit) && gm.selectedUnit.hasAttacked == false)
+            {
+                gm.selectedUnit.Attack(unit);
+            }
+        }
 
-            gm.ResetTiles();
+    }
+
+    void Attack(Unit target)
+    {
+        hasAttacked = true;
+
+        int damageDealt = attack - target.defense;
+        int damageReceived = target.attack - defense;
+
+        if (damageDealt >= 1)
+        {
+            target.health -= damageDealt;
+        }
+        if (damageReceived >= 1)
+        {
+            health -= damageReceived;
+        }
+
+        if (target.health <= 0)
+        {
+            Destroy(target.gameObject);
             GetWalkableTiles();
+        }
+        if (health <= 0)
+        {
+            gm.ResetTiles();
+            Destroy(gameObject);
         }
     }
 
@@ -59,6 +116,31 @@ public class Unit : MonoBehaviour
                     tile.Highlight();
                 }
             }
+        }
+    }
+
+    void GetEnemies()
+    {
+        enemiesInRange.Clear();
+
+        foreach (Unit unit in FindObjectsOfType<Unit>())
+        {
+            if (Mathf.Abs(transform.position.x - unit.transform.position.x) + Mathf.Abs(transform.position.y - unit.transform.position.y) <= attackRange)
+            {
+                if (unit.playerNumber != gm.playerTurn && hasAttacked == false)
+                {
+                    enemiesInRange.Add(unit);
+                    unit.weaponIcon.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void ResetWeaponIcons()
+    {
+        foreach (Unit unit in FindObjectsOfType<Unit>())
+        {
+            unit.weaponIcon.SetActive(false);
         }
     }
 
@@ -83,5 +165,7 @@ public class Unit : MonoBehaviour
         }
 
         hasMoved = true;
+        ResetWeaponIcons();
+        GetEnemies();
     }
 }
