@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: d73d647d5fe784351afbf867ffed44fb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9196440487934256096
+    second: Sword Sprite Sheet_0
+  - first:
+      213: 451017872402977215
+    second: Sword Sprite Sheet_1
+  - first:
+      213: 5363450417594419125
+    second: Sword Sprite Sheet_2
+  - first:
+      213: 5854032202093236010
+    second: Sword Sprite Sheet_3
+  - first:
+      213: -389466676597331394
+    second: Sword Sprite Sheet_4
+  - first:
+      213: -4150223811344385609
+    second: Sword Sprite Sheet_5
+  - first:
+      213: -6217287071667788762
+    second: Sword Sprite Sheet_6
+  - first:
+      213: 7245769217967594267
+    second: Sword Sprite Sheet_7
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1348
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 934
+        width: 644
+        height: 551
+      alignment: 9
+      pivot: {x: 0.635, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f000f821cf0c42048a928c42bc5420d
+      internalID: 9196440487934256096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 930
+        width: 644
+        height: 552
+      alignment: 9
+      pivot: {x: 0.635, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3c6231053ee4c29b8f3b7c4dc0f65d
+      internalID: 451017872402977215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 405
+        width: 453
+        height: 453
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62a28efe6baa4691aa9d382cc22c503
+      internalID: 5363450417594419125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 404
+        width: 334
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8305a3e4b484a23a11bfc71fb1f492
+      internalID: 5854032202093236010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 173
+        width: 292
+        height: 693
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e95dfb99f124f3eae4a08ef63797dd
+      internalID: -389466676597331394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 405
+        width: 454
+        height: 453
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2157b1c0941724331bb31a89b82f07e5
+      internalID: -4150223811344385609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 48
+        width: 139
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f07a7d511aa44e979f862399aaadbe6
+      internalID: -6217287071667788762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 48
+        width: 139
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1833d5f6e9c45bb80b28e44ef79087
+      internalID: 7245769217967594267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
