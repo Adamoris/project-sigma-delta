@@ -110,6 +110,8 @@ MonoBehaviour:
     m_Bits: 256
   highlightedColor: {r: 0.22027414, g: 0.5947243, b: 0.8490566, a: 1}
   isTraversable: 0
+  creatableColor: {r: 0.764151, g: 0.32079923, b: 0.32079923, a: 1}
+  isCreatable: 0
 --- !u!61 &-8774623263838248751
 BoxCollider2D:
   m_ObjectHideFlags: 0

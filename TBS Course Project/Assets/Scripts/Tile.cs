@@ -18,6 +18,9 @@ public class Tile : MonoBehaviour
     public bool isTraversable;
     GameMaster gm;
 
+    public Color creatableColor;
+    public bool isCreatable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,7 +85,7 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public bool IsClear(Unit.UnitType unitType)
+    public bool IsClear()
     {
         Collider2D obstacle = Physics2D.OverlapCircle(transform.position, 0.2f, obstacleLayer);
         if (obstacle != null)
@@ -132,6 +135,13 @@ public class Tile : MonoBehaviour
     {
         rend.color = Color.white;
         isTraversable = false;
+        isCreatable = false;
+    }
+
+    public void SetCreatable()
+    {
+        rend.color = creatableColor;
+        isCreatable = true;
     }
 
     private void OnMouseDown()
@@ -139,6 +149,17 @@ public class Tile : MonoBehaviour
         if (isTraversable && gm.selectedUnit != null)
         {
             gm.selectedUnit.Move(transform.position);
+        }
+        else if (isCreatable == true)
+        {
+            BarrackItem item = Instantiate(gm.purchasedItem, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            gm.ResetTiles();
+            Unit unit = item.GetComponent<Unit>();
+            if (unit != null)
+            {
+                unit.hasMoved = true;
+                unit.hasAttacked = true;
+            }
         }
     }
 }

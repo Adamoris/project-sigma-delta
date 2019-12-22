@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Unit : MonoBehaviour
 {
@@ -32,10 +34,23 @@ public class Unit : MonoBehaviour
 
     private Animator camAnim;
 
+    public Color unitInactive;
+
+    public TextMeshProUGUI kingHealth;
+
     private void Start()
     {
         gm = FindObjectOfType<GameMaster>();
         camAnim = Camera.main.GetComponent<Animator>();
+        UpdateKingHealth();
+    }
+
+    public void UpdateKingHealth()
+    {
+        if (unitType == UnitType.King)
+        {
+            kingHealth.text = health.ToString();
+        }
     }
 
     private void OnMouseDown()
@@ -83,6 +98,7 @@ public class Unit : MonoBehaviour
         camAnim.SetTrigger("shake");
 
         hasAttacked = true;
+        hasMoved = true;
 
         int damageDealt = attack - target.defense;
         int damageReceived = target.attack - defense;
@@ -92,12 +108,14 @@ public class Unit : MonoBehaviour
             DamageIndicator instance = Instantiate(damageIndicator, target.transform.position, Quaternion.identity);
             instance.Setup(damageDealt);
             target.health -= damageDealt;
+            target.UpdateKingHealth();
         }
         if (damageReceived >= 1)
         {
             DamageIndicator instance = Instantiate(damageIndicator, transform.position, Quaternion.identity);
             instance.Setup(damageReceived);
             health -= damageReceived;
+            UpdateKingHealth();
         }
 
         if (target.health <= 0)
@@ -112,6 +130,14 @@ public class Unit : MonoBehaviour
             gm.ResetTiles();
             Destroy(gameObject);
         }
+
+        foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sr.color = unitInactive;
+        }
+        selected = false;
+        gm.selectedUnit = null;
+        gm.ResetTiles();
     }
 
     void GetWalkableTiles()
@@ -125,7 +151,7 @@ public class Unit : MonoBehaviour
         {
             if (Mathf.Abs(transform.position.x - tile.transform.position.x) + Mathf.Abs(transform.position.y - tile.transform.position.y) <= movement)
             {
-                if (tile.IsClear(unitType) == true)
+                if (tile.IsClear())
                 {
                     tile.Highlight();
                 }
@@ -147,6 +173,17 @@ public class Unit : MonoBehaviour
                     unit.weaponIcon.SetActive(true);
                 }
             }
+        }
+
+        if (hasMoved == true && enemiesInRange.Count == 0)
+        {
+            foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
+            {
+                sr.color = unitInactive;
+            }
+            selected = false;
+            gm.selectedUnit = null;
+            gm.ResetTiles();
         }
     }
 

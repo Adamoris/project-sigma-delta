@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4876088219390206623}
   - component: {fileID: 4876088219390206622}
   - component: {fileID: 4870322844898982887}
+  - component: {fileID: 1413816170}
+  - component: {fileID: 2239481761262757904}
   m_Layer: 8
   m_Name: Red Fortress (forge)
   m_TagString: Untagged
@@ -109,6 +111,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &1413816170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876088219390206689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7181b4c1668334f5a80e78ccb91304e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldPerTurn: 10
+  playerNumber: 1
+--- !u!114 &2239481761262757904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876088219390206689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c413536862842a29ee52018b1adbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 200
 --- !u!1 &4876088220519051362
 GameObject:
   m_ObjectHideFlags: 0

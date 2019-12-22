@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6328304792821864982}
   - component: {fileID: 6328304792821864983}
   - component: {fileID: -3592921764279855198}
+  - component: {fileID: 1081457084}
+  - component: {fileID: -4490477806324585491}
   m_Layer: 8
   m_Name: Blue Fortress (forge)
   m_TagString: Untagged
@@ -109,6 +111,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &1081457084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328304792821864968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7181b4c1668334f5a80e78ccb91304e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldPerTurn: 10
+  playerNumber: 2
+--- !u!114 &-4490477806324585491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328304792821864968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c413536862842a29ee52018b1adbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 200
 --- !u!1 &6328304793237415811
 GameObject:
   m_ObjectHideFlags: 0

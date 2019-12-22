@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 182535241831543957}
   - component: {fileID: 182535241831543954}
   - component: {fileID: 182535241831543955}
+  - component: {fileID: -4155273911332822650}
   m_Layer: 8
   m_Name: Blue Soldier
   m_TagString: Untagged
@@ -604,6 +605,21 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 3485084768234900520, guid: 81780fc7ea485484eb4a42822d826baf,
     type: 3}
+  unitInactive: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  kingHealth: {fileID: 0}
+--- !u!114 &-4155273911332822650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182535241831543953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c413536862842a29ee52018b1adbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 100
 --- !u!1001 &182535241374733814
 PrefabInstance:
   m_ObjectHideFlags: 0

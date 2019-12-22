@@ -278,6 +278,8 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 3485084768234900520, guid: 81780fc7ea485484eb4a42822d826baf,
     type: 3}
+  unitInactive: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  kingHealth: {fileID: 0}
 --- !u!1 &6799578337063683263
 GameObject:
   m_ObjectHideFlags: 0

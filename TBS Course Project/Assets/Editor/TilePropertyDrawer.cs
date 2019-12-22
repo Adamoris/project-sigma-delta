@@ -15,6 +15,8 @@ public class TilePropertyDrawer : Editor
         SerializedProperty obstacleLayer = serializedObject.FindProperty("obstacleLayer");
         SerializedProperty highlightedColor = serializedObject.FindProperty("highlightedColor");
         SerializedProperty isTraversable = serializedObject.FindProperty("isTraversable");
+        SerializedProperty creatableColor = serializedObject.FindProperty("creatableColor");
+        SerializedProperty isCreatable = serializedObject.FindProperty("isCreatable");
 
         Tile tile = target as Tile;
 
@@ -34,6 +36,8 @@ public class TilePropertyDrawer : Editor
         EditorGUILayout.PropertyField(obstacleLayer);
         EditorGUILayout.PropertyField(highlightedColor);
         EditorGUILayout.PropertyField(isTraversable);
+        EditorGUILayout.PropertyField(creatableColor);
+        EditorGUILayout.PropertyField(isCreatable);
 
         serializedObject.ApplyModifiedProperties();
     }

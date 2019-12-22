@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5312385815014439689}
   - component: {fileID: 5312385815014439702}
   - component: {fileID: 5312385815014439703}
+  - component: {fileID: 7276392513114889580}
   m_Layer: 8
   m_Name: Blue Archer
   m_TagString: Untagged
@@ -192,6 +193,21 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 3485084768234900520, guid: 81780fc7ea485484eb4a42822d826baf,
     type: 3}
+  unitInactive: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  kingHealth: {fileID: 0}
+--- !u!114 &7276392513114889580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312385815014439701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c413536862842a29ee52018b1adbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 130
 --- !u!1 &5312385815070481488
 GameObject:
   m_ObjectHideFlags: 0

@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -552174605
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2209342538767335383, guid: df0b14c564ebb4b0794a1ed281e06456,
     type: 3}
@@ -149,8 +149,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -552174605
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: 1413402237203339625, guid: df0b14c564ebb4b0794a1ed281e06456,
     type: 3}
@@ -231,8 +231,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -552174605
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 7881198559344992930, guid: df0b14c564ebb4b0794a1ed281e06456,
     type: 3}
@@ -313,8 +313,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -552174605
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -6906239418364873571, guid: df0b14c564ebb4b0794a1ed281e06456,
     type: 3}
@@ -395,8 +395,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -552174605
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -1264617702139326643, guid: df0b14c564ebb4b0794a1ed281e06456,
     type: 3}
@@ -480,8 +480,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -552174605
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -3696446607812458972, guid: df0b14c564ebb4b0794a1ed281e06456,
     type: 3}
@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 7327345929165371367}
   - component: {fileID: 7327345929165371364}
   - component: {fileID: 7327345929165371365}
+  - component: {fileID: 6920616064275335155}
   m_Layer: 8
   m_Name: Blue Bruiser
   m_TagString: Untagged
@@ -521,7 +522,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7327345929165371371}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -605,6 +606,21 @@ MonoBehaviour:
     type: 3}
   deathEffect: {fileID: 3485084768234900520, guid: 81780fc7ea485484eb4a42822d826baf,
     type: 3}
+  unitInactive: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  kingHealth: {fileID: 0}
+--- !u!114 &6920616064275335155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7327345929165371371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c413536862842a29ee52018b1adbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 150
 --- !u!1001 &7327345927389507235
 PrefabInstance:
   m_ObjectHideFlags: 0

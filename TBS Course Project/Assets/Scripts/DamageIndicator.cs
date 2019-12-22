@@ -16,7 +16,7 @@ public class DamageIndicator : MonoBehaviour
 
     public void Setup(int damage)
     {
-        damageIndicator.text = damage + "";
+        damageIndicator.text = damage.ToString();
     }
 
     void Destruction()
