@@ -7,7 +7,7 @@ public class Unit : MonoBehaviour
     public bool selected;
     GameMaster gm;
 
-    public enum UnitType { None, Sword, Axe, Bow}
+    public enum UnitType { None, Archer, Bruiser, Healer, King, Soldier }
     public UnitType unitType;
 
     public int movement;

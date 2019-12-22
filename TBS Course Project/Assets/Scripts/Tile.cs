@@ -89,19 +89,36 @@ public class Tile : MonoBehaviour
         {
             return false;
         }
-
-        if (unitType == Unit.UnitType.Axe && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
+        if (terrainType == TerrainType.None && randomGeneration == false)
         {
             return false;
         }
-        else if (unitType == Unit.UnitType.Sword && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
+        if (terrainType == TerrainType.Mountain || terrainType == TerrainType.Water)
         {
             return false;
         }
-        else if (unitType == Unit.UnitType.Bow && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
+        /*
+        if (unitType == Unit.UnitType.Archer && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
         {
             return false;
         }
+        else if (unitType == Unit.UnitType.Bruiser && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
+        {
+            return false;
+        }
+        else if (unitType == Unit.UnitType.Healer && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
+        {
+            return false;
+        }
+        else if (unitType == Unit.UnitType.King && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
+        {
+            return false;
+        }
+        else if (unitType == Unit.UnitType.Soldier && (terrainType == TerrainType.None && randomGeneration == false || terrainType == TerrainType.Mountain))
+        {
+            return false;
+        }
+        */
         return true;
     }
 
