@@ -33,6 +33,9 @@ public class Unit : MonoBehaviour
     public GameObject deathEffect;
 
     private Animator camAnim;
+    private AudioSource source;
+    public AudioClip selectedSound;
+    public AudioClip attackSound;
 
     public Color unitInactive;
 
@@ -40,6 +43,7 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         gm = FindObjectOfType<GameMaster>();
         camAnim = Camera.main.GetComponent<Animator>();
         UpdateKingHealth();
@@ -50,6 +54,14 @@ public class Unit : MonoBehaviour
         if (unitType == UnitType.King)
         {
             kingHealth.text = health.ToString();
+        }
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            gm.ToggleStatsPanel(this);
         }
     }
 
@@ -71,6 +83,9 @@ public class Unit : MonoBehaviour
                 {
                     gm.selectedUnit.selected = false;
                 }
+
+                source.clip = selectedSound;
+                source.Play();
 
                 selected = true;
                 gm.selectedUnit = this;
@@ -110,26 +125,48 @@ public class Unit : MonoBehaviour
             target.health -= damageDealt;
             target.UpdateKingHealth();
         }
-        if (damageReceived >= 1)
+
+        if (transform.tag == "Archer" && target.tag != "Archer")
         {
-            DamageIndicator instance = Instantiate(damageIndicator, transform.position, Quaternion.identity);
-            instance.Setup(damageReceived);
-            health -= damageReceived;
-            UpdateKingHealth();
+            if (Mathf.Abs(transform.position.x - target.transform.position.x) + Mathf.Abs(transform.position.y - target.transform.position.y) <= 1)
+            {
+                if (damageReceived >= 1)
+                {
+                    DamageIndicator instance = Instantiate(damageIndicator, transform.position, Quaternion.identity);
+                    instance.Setup(damageReceived);
+                    health -= damageReceived;
+                    UpdateKingHealth();
+                }
+            }
         }
+        else
+        {
+            if (damageReceived >= 1)
+            {
+                DamageIndicator instance = Instantiate(damageIndicator, transform.position, Quaternion.identity);
+                instance.Setup(damageReceived);
+                health -= damageReceived;
+                UpdateKingHealth();
+            }
+        }
+        
 
         if (target.health <= 0)
         {
             Instantiate(deathEffect, target.transform.position, Quaternion.identity);
             Destroy(target.gameObject);
             GetWalkableTiles();
+            gm.RemoveStatsPanel(target);
         }
         if (health <= 0)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             gm.ResetTiles();
+            gm.RemoveStatsPanel(this);
             Destroy(gameObject);
         }
+
+        gm.UpdateStatsPanel();
 
         foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
         {
@@ -218,5 +255,6 @@ public class Unit : MonoBehaviour
         hasMoved = true;
         ResetWeaponIcons();
         GetEnemies();
+        gm.MoveStatsPanel(this);
     }
 }

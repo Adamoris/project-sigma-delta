@@ -27,6 +27,62 @@ public class GameMaster : MonoBehaviour
 
     public BarrackItem purchasedItem;
 
+    public GameObject statsPanel;
+    public Vector2 statsPanelShift;
+    public Unit viewedUnit;
+
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI attackText;
+    public TextMeshProUGUI defenseText;
+    public TextMeshProUGUI movementtext;
+    public TextMeshProUGUI rangeText;
+
+
+    public void ToggleStatsPanel(Unit unit)
+    {
+        if (unit.Equals(viewedUnit) == false)
+        {
+            statsPanel.SetActive(true);
+            statsPanel.transform.position = (Vector2)unit.transform.position + statsPanelShift;
+            viewedUnit = unit;
+            UpdateStatsPanel();
+        }
+        else
+        {
+            statsPanel.SetActive(false);
+            viewedUnit = null;
+        }
+    }
+
+    public void UpdateStatsPanel()
+    {
+        if (viewedUnit != null)
+        {
+            healthText.text = viewedUnit.health.ToString();
+            attackText.text = viewedUnit.attack.ToString();
+            defenseText.text = viewedUnit.defense.ToString();
+            movementtext.text = viewedUnit.movement.ToString();
+            rangeText.text = viewedUnit.attackRange.ToString();
+        }
+    }
+
+    public void MoveStatsPanel(Unit unit)
+    {
+        if (unit.Equals(viewedUnit))
+        {
+            statsPanel.transform.position = (Vector2)unit.transform.position + statsPanelShift;
+        }
+    }
+
+    public void RemoveStatsPanel(Unit unit)
+    {
+        if (unit.Equals(viewedUnit))
+        {
+            statsPanel.SetActive(false);
+            viewedUnit = null;
+        }
+    }
+
     public void UpdateGoldText()
     {
         player1GoldText.text = player1Gold.ToString();
