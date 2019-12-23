@@ -41,6 +41,8 @@ public class Unit : MonoBehaviour
 
     public TextMeshProUGUI kingHealth;
 
+    public GameObject victoryPanel;
+
     private void Start()
     {
         source = GetComponent<AudioSource>();
@@ -153,6 +155,10 @@ public class Unit : MonoBehaviour
 
         if (target.health <= 0)
         {
+            if (target.unitType == UnitType.King)
+            {
+                target.victoryPanel.SetActive(true);
+            }
             Instantiate(deathEffect, target.transform.position, Quaternion.identity);
             Destroy(target.gameObject);
             GetWalkableTiles();
@@ -160,6 +166,13 @@ public class Unit : MonoBehaviour
         }
         if (health <= 0)
         {
+            /*
+            if (unitType == UnitType.King)
+            {
+                Debug.Log("asdf");
+                victoryPanel.SetActive(true);
+            }
+            */
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             gm.ResetTiles();
             gm.RemoveStatsPanel(this);

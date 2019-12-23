@@ -157,6 +157,10 @@ public class Tile : MonoBehaviour
             Unit unit = item.GetComponent<Unit>();
             if (unit != null)
             {
+                foreach (SpriteRenderer sr in unit.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sr.color = unit.unitInactive;
+                }
                 unit.hasMoved = true;
                 unit.hasAttacked = true;
             }
